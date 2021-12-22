@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="5db72ab6-56f0-41d5-824f-ef7e31116c41" Name="Jyn's Nice Stuff" Enabled="true">
+    <Folders>
+      <Folder Id="e01ebd4f-6b43-4ae0-911a-837f3338f294" Name="Quality of Life" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="false" Name="AFK My ASS" Id="d133ed51-5668-41dd-81e8-5933e7f5d6d2" RegularExpression="4W4yf120MK3y80412d" Description="This should be the sequence of keypresses to confirm your recipe, and to activate your 1st crafting macro.">
+            <Actions>
+              <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="87" KeyPressWindow="FINAL FANTASY XIV" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="250">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d133ed51-5668-41dd-81e8-5933e7f5d6d2" TriggerForce="regexp,refire" ActionType="Trigger" ExecutionDelayExpression="300000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="No Food" Id="ecdd37f3-52d2-4563-882f-60d7f74e084f" RegularExpression="(?&lt;name&gt;[a-zA-Z-']+ [a-zA-Z-']+) loses the effect of Well Fed from (?:[A-Z][a-zA-Z-']+) (?:[A-Z][a-zA-Z-']+)" DebugLevel="Info">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="No Food ${name}" UseTTSExclusive="False" TextAuraFontSize="0" ActionType="UseTTS" RefireInterrupt="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivparty}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="Readycheck" Id="ea558919-5df2-44bb-ae11-c0b58baa7f23" RegularExpression="has initiated a ready check">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="Ready check" TextAuraFontSize="0" ActionType="UseTTS" RefireInterrupt="True" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="Readycheck complete" Id="f3e99a2a-4548-46c5-be88-38a20d4e46f1" RegularExpression="Ready: (\d+)\/(\1)">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="Ready check complete" TextAuraFontSize="0" ActionType="UseTTS" RefireInterrupt="True" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
