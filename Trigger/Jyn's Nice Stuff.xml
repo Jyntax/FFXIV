@@ -60,7 +60,7 @@
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
               </Trigger>
-              <Trigger Enabled="false" Name="Cancel Macro" Id="ab7c8042-9e8b-472a-8dce-070fea2cd1fa" RegularExpression="00:08c2:You synthesize" Description="This should be the sequence of keypresses to confirm your recipe, and to activate your 1st crafting macro.">
+              <Trigger Enabled="true" Name="Cancel Macro" Id="ab7c8042-9e8b-472a-8dce-070fea2cd1fa" RegularExpression="00:08c2:You synthesize" Description="This should be the sequence of keypresses to confirm your recipe, and to activate your 1st crafting macro.">
                 <Actions>
                   <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="54" KeyPressWindow="FINAL FANTASY XIV" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress">
                     <Condition Enabled="false" Grouping="Or" />
